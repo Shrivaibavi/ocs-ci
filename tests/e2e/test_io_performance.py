@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 )
 @google_api_required
 @tier1
-class TestIOPerformance(ManageTest):
+class TestIOPerformance(E2ETest):
     """
     Test IO performance
     """
