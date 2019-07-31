@@ -130,8 +130,13 @@ CONFIGURE_PVC_ON_MONITORING_POD = os.path.join(
 PGSQL_STORAGECLASS = os.path.join(
     TEMPLATE_PGSQL_DIR, "StorageClass.yaml"
 )
+
 PGSQL_BENCHMARK = os.path.join(
     TEMPLATE_PGSQL_DIR, "BenchMark.yaml"
+)
+
+PGBENCH_CR = os.path.join(
+    TEMPLATE_PGSQL_DIR, "CR.yaml"
 )
 
 NGINX_POD_YAML = os.path.join(
