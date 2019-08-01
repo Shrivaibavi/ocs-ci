@@ -33,11 +33,9 @@ def teardown():
         f"Deleting created storage class: {SC_OBJ.name}"
     )
     SC_OBJ.delete()
+
     log.info(
-        f"Storage class: {SC_OBJ.name} deleted successfully"
-    )
-    log.info(
-        f"Deleting created pgbench pod: {SC_OBJ.name}"
+        f"Deleting created pgbench pod: {cr_obj.name}"
     )
     cr_obj.delete()
 
@@ -58,6 +56,7 @@ def create_storageclass(sc_name, sc_namespace):
     log.info(
         f"Storage class: {SC_OBJ.name} created successfully !"
     )
+
 
 
 def run_pqbench_workload(cr_client, cr_threads,
@@ -94,19 +93,20 @@ class TestPgSQL(E2ETest):
         create_storageclass(sc_name='rook-ceph-block-extented',
                             sc_namespace='my-ripsaw')
 
+    # Deploy ripsaw framework
     # pgsql_ripsaw_operator = RipSaw(crd='ripsaw_v1alpha1_ripsaw_crd.yaml')
+    # check for benchmark operator is created
+        log.info(
+            f"Verify benchmark operator is created and running"
+        )
+    #    assert helpers.wait_for_resource_state(pgsql_ripsaw_operator, constants.STATUS_RUNNING)
 
     # deploy PostgreSQL
-
-    # check Pods are Running
+    # check postgres database is created
         log.info(
-            f"Verify benchmark operator is created"
+            f"Verify Postgres database is created and running"
         )
-
-
-        log.info(
-            f"Verify pod is created and running"
-        )
+    #    assert helpers.wait_for_resource_state(postgres, constants.STATUS_RUNNING)
 
     # Run PGSQL_BENCHMARK
         run_pqbench_workload(cr_client=2, cr_threads=1,
