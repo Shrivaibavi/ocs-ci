@@ -1,0 +1,11 @@
+iapiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: rook-ceph-block-extented
+parameters:
+  blockPool: rbd
+  clusterNamespace: rook-ceph
+  fstype: xfs
+provisioner: ceph.rook.io/block
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
