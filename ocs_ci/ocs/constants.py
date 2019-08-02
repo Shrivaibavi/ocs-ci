@@ -90,6 +90,7 @@ MDS_APP_LABEL = "app=rook-ceph-mds"
 TOOL_APP_LABEL = "app=rook-ceph-tools"
 MGR_APP_LABEL = "app=rook-ceph-mgr"
 OSD_APP_LABEL = "app=rook-ceph-osd"
+OCS4_TEST_LABEL = "ocs42testobj=ocs-test-obj"
 
 # YAML paths
 TOOL_POD_YAML = os.path.join(
