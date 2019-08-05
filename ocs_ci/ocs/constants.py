@@ -135,10 +135,6 @@ PGSQL_BENCHMARK = os.path.join(
     TEMPLATE_PGSQL_DIR, "BenchMark.yaml"
 )
 
-PGBENCH_CR = os.path.join(
-    TEMPLATE_PGSQL_DIR, "CR.yaml"
-)
-
 NGINX_POD_YAML = os.path.join(
     TEMPLATE_APP_POD_DIR, "nginx.yaml"
 )
