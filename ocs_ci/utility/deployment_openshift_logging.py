@@ -308,3 +308,4 @@ def check_health_of_clusterlogging():
         raise UnexpectedBehaviour
         logger.error("Cluster logging is in Bad state")
     return pod_list
+
