@@ -68,6 +68,7 @@ POD = "Pod"
 ROUTE = "Route"
 NODE = "Node"
 DEPLOYMENTCONFIG = "deploymentconfig"
+
 # Provisioners
 AWS_EFS_PROVISIONER = "openshift.org/aws-efs"
 ROLE = 'Role'
@@ -86,8 +87,9 @@ TEST_FILES_BUCKET = "ocsci-test-files"
 ROOK_REPOSITORY = "https://github.com/rook/rook.git"
 MOUNT_POINT = '/var/lib/www/html'
 
-
+DEFAULT_SECRET = 'rook-ceph-csi'
 DEFAULT_BLOCKPOOL = 'rbd'
+
 # encoded value of 'admin'
 ADMIN_USER = 'admin'
 GB = 1024 ** 3
