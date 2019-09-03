@@ -88,7 +88,6 @@ MOUNT_POINT = '/var/lib/www/html'
 
 
 DEFAULT_BLOCKPOOL = 'rbd'
-DEFAULT_SECRET = 'rook-ceph-csi'
 # encoded value of 'admin'
 ADMIN_USER = 'admin'
 GB = 1024 ** 3

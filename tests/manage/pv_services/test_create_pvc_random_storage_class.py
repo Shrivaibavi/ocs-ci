@@ -129,7 +129,7 @@ class TestCreatePVCRandomStorageClass(ManageTest):
 
     def test_create_pvc_with_random_sc(self):
         storageclass_list = helpers.get_all_storageclass_names()
-        #if len(storageclass_list):
-            #assert create_pvc(storageclass_list, count=20)
-        #else:
-            #log.error("No Storageclass Found")
+        if len(storageclass_list):
+            assert create_pvc(storageclass_list, count=20)
+        else:
+            log.error("No Storageclass Found")
