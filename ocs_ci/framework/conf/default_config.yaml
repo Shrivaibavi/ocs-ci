@@ -87,6 +87,7 @@ ENV_DATA:
   worker_replicas: 3
   skip_ocp_deployment: false
   skip_ocs_deployment: false
+  logging_version: '4.2'
   # --------------------------------------------------------------------------
   # Following parameters are not used when deploy via operator and will removed
   # soon as part of cleanup: https://projects.engineering.redhat.com/browse/OCSQE-73
