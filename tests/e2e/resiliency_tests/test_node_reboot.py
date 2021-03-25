@@ -2,6 +2,7 @@ from ocs_ci.ocs.node import get_node_objs
 import pytest
 import logging
 
+from ocs_ci.helpers.sanity_helpers import Sanity
 from ocs_ci.framework.testlib import bugzilla, ManageTest
 
 log = logging.getLogger(__name__)
@@ -11,6 +12,26 @@ class TestNode(ManageTest):
     """
     Resiliency Tests
     """
+
+    @pytest.fixture(autouse=True)
+    def init_sanity(self):
+        """
+        Initialize Sanity instance
+
+        """
+        self.sanity_helpers = Sanity()
+
+    @pytest.fixture(autouse=True)
+    def teardown(self, request, nodes):
+        """
+        Make sure all nodes are up again
+
+        """
+
+        def finalizer():
+            nodes.restart_nodes_by_stop_and_start_teardown()
+
+        request.addfinalizer(finalizer)
 
     @bugzilla("1754287")
     @pytest.mark.polarion_id("OCS-2015")
