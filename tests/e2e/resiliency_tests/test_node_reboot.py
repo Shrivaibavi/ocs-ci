@@ -4,10 +4,12 @@ import logging
 
 from ocs_ci.helpers.sanity_helpers import Sanity
 from ocs_ci.framework.testlib import bugzilla, ManageTest
+from ocs_ci.framework.testlib import ignore_leftovers
 
 log = logging.getLogger(__name__)
 
 
+@ignore_leftovers
 class TestNode(ManageTest):
     """
     Resiliency Tests
@@ -45,5 +47,5 @@ class TestNode(ManageTest):
         while i <= 5:
             for node in ocp_nodes:
                 nodes.restart_nodes(nodes=[node], wait=False)
-                self.sanity_helpers.health_check(cluster_check=False, tries=60)
+                self.sanity_helpers.health_check(cluster_check=False, tries=120)
             i = i + 1
