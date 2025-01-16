@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    appname: busybox_app
+    workloadpattern: simple_io
+  name: busybox
+spec:
+  selector:
+    matchLabels:
+      workload: busybox
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        workload: busybox
+    spec:
+      containers:
+      - command: ["/bin/sh", "-c", "sleep 1000000"]
+        image: quay.io/ocsci/busybox:latest
+        imagePullPolicy: IfNotPresent
+        name: busybox
