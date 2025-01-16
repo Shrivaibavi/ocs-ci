@@ -1,0 +1,2 @@
+resources:
+  - app_no_pvc.yaml
